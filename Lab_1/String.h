@@ -2,8 +2,7 @@
 
 class String
 {
-	  char *p_str;
-	  unsigned int length;
+
 public:
 	  String ();
 	  String (char*);
@@ -16,4 +15,7 @@ public:
 	  void printLengthStr () const;
 	  void isSymbStr (char) const;
 	  void replacSymbStr (char,char);
+private:
+      char *p_str;
+	  unsigned int length;
 };

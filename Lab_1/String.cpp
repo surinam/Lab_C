@@ -5,36 +5,49 @@
 
 String::String ()
 {
-	std::cout<<"Вызван конструктор по умолчанию"<<std::endl;
-	p_str="";
+	std::cout<<"Call the default constructor"<<std::endl;
+	p_str=NULL;
 	length=0;
 }
 
 String::String (char*str)
 {
-	std::cout<<"Вызван конструктор c параметром"<<std::endl;
-	p_str=new char [length=strlen(str)];
-	strcpy_s (p_str,length,str);
+	std::cout<<"Call the constructor parameter "<<std::endl;
+	p_str=new char [strlen(str)];
+	if (p_str)
+	{
+     length=strlen(str)+1;
+	 strcpy_s (p_str,length,str);
+	}
 }
 
 String::String (const String & str)
 {
-	std::cout << "Вызов конструктора копирования"<<std::endl;
+	std::cout << "Call the copy constructor"<<std::endl;
 	p_str=new char [str.length];
-	strcpy_s (p_str,str.length,str.p_str);
-	length=str.length;
-
+	if (p_str)
+	{
+	 strcpy_s (p_str,str.length,str.p_str);
+	 length=str.length;
+	}
 }
 String::~String ()
 {
-	delete [] p_str;
+	if (p_str)
+	{
+	  delete [] p_str;
+	}
 	
 }
 
 void String::setStr (char*str)
 {
-	p_str=new char [length=strlen(str)+1];
-	strcpy_s (p_str,length,str);
+	if (p_str)
+	{
+	 memset(p_str, 0, sizeof(p_str));
+     length=strlen(str)+1;
+	 strcpy_s (p_str,length,str);
+	}
 }
 
  char* String::getStr () const
@@ -49,24 +62,32 @@ void String::setStr (char*str)
 
 void String::printStr () const
 {
-	std::cout<<"String: "<<p_str<<std::endl;
+	if (p_str)
+	{
+	 std::cout<<"String: "<<p_str<<std::endl;
+	}
+	else std::cout<<"String - empty "<<std::endl;
 }
 
 void String::printLengthStr () const
  {
-	 std::cout<<"Длина строки:"<<length-1<<" символа(ов)"<<std::endl;
+	 if (length)
+	 {
+	 std::cout<<"Length of string:"<<length-1<<" symbol(s)"<<std::endl;
+	 }
+	 else std::cout<<"Length of string - 0"<<std::endl;
  }
 
  void String::isSymbStr (char s) const /*strchr (p_str,s)*/
  {
 	
 	 unsigned int count=0;
-	 for (int i=0;i<length;i++)
+	 for (int i=0;i<this->length;i++)
 	 {
-		 if (s==p_str[i]) count++;
+		 if (s==this->p_str[i]) count++;
 	 }
-	 if (count!=0)std::cout<<"Такой символ существует!"<<" Количество вхождений: "<<count<<" раз(а)"<<std::endl;
-	    else std::cout<<"Такого символа в строке нет!"<<std::endl;
+	 if (count!=0)std::cout<<"This symbol exists!"<<" Number of occurrences: "<<count<<" time(s)"<<std::endl;
+	    else std::cout<<"This symbol in the string is not!"<<std::endl;
  }
 
  void String::replacSymbStr (char a,char b)
