@@ -8,7 +8,7 @@ using namespace std;
 const unsigned int size_str=100, size_buf_str=50,size_mas_obj=3;
 
 
-char str_input[size_str], mas[size_buf_str];
+char c,c1,str_input[size_str], mas[size_buf_str];
 
 
 int menu_user ()
@@ -97,8 +97,21 @@ void search_Str (String * mas_obj)
 int _tmain(int argc, _TCHAR* argv[])
 {
 	setlocale (LC_CTYPE, "rus");
+	cout<<"Input string"<<endl;
+	gets_s(str_input);
+	String s(str_input); 
+	cout<<"Input symbol"<<endl;
+	cin>>c;
+	s.isSymbStr (c);
+	cout<<"Replace the symbol (input)"<<endl;
+	cin>>c;
+	cout<<"symbol (input)"<<endl;
+	cin>>c1;
+	s.replacSymbStr (c,c1);
+	s.printStr ();
 	String mas_object [size_mas_obj];
 	in_Str (mas_object);
+	
 	
 do
 {
