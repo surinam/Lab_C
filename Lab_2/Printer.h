@@ -9,16 +9,10 @@ class Printer:
 {
 
 private:
-	char*pereferiy;
-	unsigned int oper_memory;
-	unsigned int weight;
+	unsigned int emkost_ustr_podachi;
 	
 public:
 	Printer ();
-	void setPereferiy (char*pereferiy);
-	void getPereferiy ();
-	void setOper_memory (unsigned int oper_memory);
-	void getOper_memory ();
-	void setWeight (unsigned int weight);
-	void getWeight ();
+	void setEmkost_ustr_podachi (unsigned int emkost_ustr_podachi);
+	void getEmkost_ustr_podachi ();
 };

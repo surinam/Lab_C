@@ -10,8 +10,6 @@ private:
 	
 public:
 	Texnika ();
-
-
 	void setPereferiy (char*pereferiy);
 	void getPereferiy ();
 	void setOper_memory (unsigned int oper_memory);
