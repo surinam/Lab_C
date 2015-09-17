@@ -28,3 +28,8 @@ void Planchet::getRear_camera ()
 	cout<<"Тыловая камера (Мп): "<<this->rear_camera<<endl;
 }
 
+Planchet::~Planchet ()
+{
+	cout<<"Вызван деконструктор планшета"<<endl;
+}
+

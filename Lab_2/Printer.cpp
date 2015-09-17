@@ -19,3 +19,10 @@ void Printer::getEmkost_ustr_podachi ()
 	cout<<"Емкость устройств подачи (стр.): "<<this->emkost_ustr_podachi<<endl;
 }
 
+Printer::~Printer ()
+{
+	cout<<"Вызван деконструктор принтера"<<endl;
+}
+
+
+

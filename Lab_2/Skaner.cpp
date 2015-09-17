@@ -19,3 +19,8 @@ void Skaner::getSpeed_scan_color ()
 	cout<<"Скорость сканирования (цвет.): "<<this->speed_scan_color<<endl;
 }
 
+Skaner::~Skaner ()
+{
+	cout<<"Вызван деконструктор сканера"<<endl;
+}
+

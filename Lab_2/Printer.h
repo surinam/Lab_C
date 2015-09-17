@@ -15,4 +15,5 @@ public:
 	Printer ();
 	void setEmkost_ustr_podachi (unsigned int emkost_ustr_podachi);
 	void getEmkost_ustr_podachi ();
+	~Printer ();
 };

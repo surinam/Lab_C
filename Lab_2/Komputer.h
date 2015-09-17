@@ -14,4 +14,5 @@ public:
 	Komputer ();
 	void setVideo_card (char*video_card);
 	void getVideo_card ();
+	~Komputer();
 };

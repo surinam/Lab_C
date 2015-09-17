@@ -6,7 +6,7 @@ class Texnika
 private:
 	char*pereferiy;
 	unsigned int oper_memory;
-	unsigned int weight;
+	float weight;
 	
 public:
 	Texnika ();
@@ -14,6 +14,7 @@ public:
 	void getPereferiy ();
 	void setOper_memory (unsigned int oper_memory);
 	void getOper_memory ();
-	void setWeight (unsigned int weight);
+	void setWeight (float weight);
 	void getWeight ();
+	~Texnika ();
 };

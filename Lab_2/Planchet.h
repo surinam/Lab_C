@@ -17,4 +17,5 @@ public:
 	void getFront_camera ();
 	void setRear_camera (float rear_camera);
 	void getRear_camera ();
+	~Planchet ();
 };

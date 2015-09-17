@@ -19,5 +19,9 @@ void Komputer::getVideo_card ()
 	cout<<"Видеокарта: "<<this->video_card<<endl;
 }
 
+Komputer::~Komputer ()
+{
+	cout<<"Вызван деконструктор компьютер"<<endl;
+}
 
 

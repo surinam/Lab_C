@@ -29,7 +29,7 @@ void Tovar::getTip_tovara ()
 	cout<<"Тип товара: "<<this->tip_tovara<<endl;
 }
 
-void Tovar::setStoimost (unsigned int stoimost)
+void Tovar::setStoimost (float stoimost)
 {
 	this->stoimost=stoimost;
 }
@@ -54,5 +54,10 @@ void Tovar::getSkidka ()
 	{
 		cout<<"Скидка отсутствует!"<<endl;
 	}
+}
+
+Tovar::~Tovar ()
+{
+	cout<<"Вызван деконструктор товар"<<endl;
 }
 

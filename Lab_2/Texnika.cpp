@@ -29,13 +29,18 @@ void Texnika::getOper_memory ()
 	cout<<"Оперативная память: "<<this->oper_memory<<endl;
 }
 
-void Texnika::setWeight (unsigned int weight)
+void Texnika::setWeight (float weight)
 {
 	this->weight=weight;
 }
 
 void Texnika::getWeight ()
 {
-	cout<<"Вес: "<<this->weight<<endl;
+	cout<<"Вес (кг): "<<this->weight<<endl;
+}
+
+Texnika::~Texnika ()
+{
+	cout<<"Вызван деконструктор техника"<<endl;
 }
 
