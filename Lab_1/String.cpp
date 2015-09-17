@@ -48,6 +48,16 @@ void String::setStr (char*str)
      length=strlen(str)+1;
 	 strcpy_s (p_str,length,str);
 	}
+	else
+	{
+		p_str=new char [strlen(str)];
+		if (p_str)
+		{
+		length=strlen(str)+1;
+	    strcpy_s (p_str,length,str);
+		}
+
+	}
 }
 
  char* String::getStr () const
