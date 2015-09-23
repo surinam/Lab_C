@@ -103,5 +103,8 @@ void String::printLengthStr () const
  void String::replacSymbStr (char a,char b)
  {
 	  char*p=strchr (p_str,a);
-	  *p=b;
+         if (p)
+         {
+          *p=b;
+         }
  }
