@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "tovar.h"
+#include <cstring>
 #include <iostream>
+
 
 using namespace  std;
 
@@ -8,6 +10,18 @@ Tovar::Tovar ()
 {
 	cout<<"Вызван конструктор товара"<<endl;
 }
+
+Tovar::Tovar (char* _brend,char* _tip_tovara,float _stoimost, bool _skidka)
+{
+	int length=strlen(_brend)+1;
+	brend=new char[length];
+	strcpy_s(brend,length,_brend);
+	length=strlen(_tip_tovara)+1;
+	tip_tovara=new char[length];
+	strcpy_s(tip_tovara,length,_tip_tovara);
+	stoimost =_stoimost;
+	skidka=_skidka;
+};
 
 void Tovar::setBrend (char*brend)
 {
@@ -36,7 +50,7 @@ void Tovar::setStoimost (float stoimost)
 
 void Tovar::getStoimost ()
 {
-	cout<<"Стоимость товара (бел.руб.): "<<this->stoimost<<endl;
+	cout<<"Стоимость товара (бел.руб.): "<<(float)stoimost<<endl;
 }
 
 void Tovar::setSkidka (bool skidka)
@@ -59,5 +73,10 @@ void Tovar::getSkidka ()
 Tovar::~Tovar ()
 {
 	cout<<"Вызван деконструктор товар"<<endl;
+	if (brend && tip_tovara )
+	{
+	delete [] brend;
+		delete [] tip_tovara;
+	}
 }
 

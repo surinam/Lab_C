@@ -14,26 +14,28 @@ using namespace  std;
 int _tmain(int argc, _TCHAR* argv[])
 {
 	setlocale (LC_CTYPE,"rus");
-	Tovar tov;
-	tov.setBrend("Apple");
-	tov.getBrend ();
-	tov.setSkidka(true);
-	tov.getSkidka();
-	tov.setStoimost(2698000);
-	tov.getStoimost();
-	tov.setTip_tovara("Бытовая техника");
-	tov.getTip_tovara ();
+	char mas_1[20],mas_2[20];
+	float stoimost=0;
+	bool yes_no_skidk=false;
+	int speed=0,ves=0;
 
-	Skaner scan;
-	scan.setBrend ("Epson");
-	scan.getBrend ();
-	scan.setSkidka (false);
-	scan.getSkidka ();
-	scan.setStoimost (5520000);
-	scan.getStoimost ();
-	scan.setWeight (2.8);
-	scan.getWeight ();
+	cout<<"Введите информацию о сканере:"<<endl;
+	cout<<"Бренд:"; cin>>mas_1;
+	cout<<"Тип товара:"; cin>>mas_2;
+	cout<<"Введите стоимость:"; cin>>stoimost;
+	cout<<"Скидка (да-1, нет-0):"; cin>>yes_no_skidk;
+	cout<<"Скорость сканирования:"; cin>>speed;
 
+	cout<<"Вес товара:"; cin>>ves;
+
+
+	Skaner scan(mas_1,mas_2,stoimost,yes_no_skidk,speed);
+
+	scan.getBrend();
+	scan.getSpeed_scan_color();
+	scan.getTip_tovara();
+	scan.getWeight();
+	
+	
 	return 0;
 }
-
