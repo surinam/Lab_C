@@ -12,7 +12,7 @@ private:
 	unsigned int emkost_ustr_podachi_;
 	
 public:
-	Printer (char*,float ,bool,unsigned int,unsigned int);
+	Printer (char* brend_="no brend", float stoimost_=NULL, bool skidka_=false,unsigned int year_manuf_=NULL,unsigned int emkost_ustr_podachi_=NULL);
 	void setBrend ();
 	void getBrend () const;
 	void setStoimost ();
@@ -23,5 +23,6 @@ public:
 	void getYearManuf () const;
 	void setEmkost_ustr_podachi ();
 	void getEmkost_ustr_podachi () const;
+	void Show()const;
 	~Printer ();
 };

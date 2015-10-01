@@ -1,47 +1,45 @@
 #include "stdafx.h"
 #include "texnika.h"
 #include <iostream>
-
 using namespace  std;
 
-Texnika::Texnika ()
+Texnika::Texnika (char*pereferiy_,float weight_ )
 {
-	cout<<"Вызван конструктор техника"<<endl;
+	int length=strlen(pereferiy_)+1;
+	this->pereferiy_=new char[length];
+	if(this->pereferiy_)
+	{
+		strcpy_s(	this->pereferiy_,length,pereferiy_);
+	}
+	this->weight_=weight_;
 }
 
-void Texnika::setPereferiy (char*pereferiy)
+void Texnika::setPereferiy ()
 {
-	this->pereferiy=pereferiy;
+	cout<<"Введите название устройства переферии: "<<this->pereferiy_<<endl;
 }
 
-void Texnika::getPereferiy ()
+void Texnika::getPereferiy () const
 {
-	cout<<"Устройства переферии: "<<this->pereferiy<<endl;
+	cout<<"Устройства переферии: "<<this->pereferiy_<<endl;
 }
 
-/*void Texnika::setOper_memory (unsigned int oper_memory)
+
+void Texnika::setWeight () 
 {
-	this->oper_memory=oper_memory;
+	cout<<"Введите вес устройства: "<<endl;
+	cin>>this->weight_;
 }
 
-void Texnika::getOper_memory ()
+void Texnika::getWeight () const
 {
-	cout<<"Оперативная память: "<<this->oper_memory<<endl;
-}*/
-
-void Texnika::setWeight (float weight)
-{
-	this->weight=weight;
-}
-
-void Texnika::getWeight ()
-{
-	cout<<"Вес (кг): "<<this->weight<<endl;
+	cout<<"Вес (кг): "<<this->weight_<<endl;
 }
 
 Texnika::~Texnika ()
 {
-	cout<<"Вызван деконструктор техника"<<endl;
+//освободить память в куче
+	delete [] pereferiy_;
 
 }
 

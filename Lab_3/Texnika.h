@@ -4,16 +4,14 @@ class Texnika
 {
 
 private:
-	char*pereferiy;
-	float weight;
+	char*pereferiy_;
+	float weight_;
 	
 public:
-	Texnika ();
-	void setPereferiy (char*pereferiy);
-	void getPereferiy ();
-	void setOper_memory (unsigned int oper_memory);
-	void getOper_memory ();
-	void setWeight (float weight);
-	void getWeight ();
+	Texnika (char*pereferiy_="not",float weight_=NULL);
+	void setPereferiy ();
+	void getPereferiy () const;
+	void setWeight () ;
+	void getWeight () const;
 	~Texnika ();
 };

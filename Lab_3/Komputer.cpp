@@ -4,8 +4,8 @@
 typedef unsigned int N;
 using namespace  std;
 
-Komputer::Komputer (char* brend_, float stoimost_, bool skidka_, N year_manuf_, char*model_video_card_="no model",N oper_memory_=0)
-	:Tovar(brend_,stoimost_,skidka_,year_manuf_), Texnika()
+Komputer::Komputer (char*brend_,float stoimost_ ,bool skidka_,N year_manuf_,char* model_video_card_,N oper_memory_,char*pereferiy_,float weight_)
+	:Tovar(brend_,stoimost_,skidka_,year_manuf_), Texnika(pereferiy_,weight_)
 {
 	length=strlen(model_video_card_)+1;
 	this->model_video_card_=new char[length];
@@ -47,7 +47,7 @@ void Komputer::setStoimost ()
 void Komputer::getStoimost () const
 {
 	cout<<"Cтоимость компьютера:\n";
-	cout<<this->stoimost_<<endl;
+	cout<<(int)this->stoimost_<<endl;
 }
 void Komputer::setSkidka ()
 {
@@ -93,17 +93,6 @@ void Komputer::getVideo_card () const
 	cout<<this->model_video_card_<<endl;
 }
 
-Komputer::~Komputer ()
-{
-	
-	cout<<"Вызван деконструктор компьютер"<<endl;
-	//освобожд. память в куче
-	if(model_video_card_ && brend_)
-	{
-	delete [] model_video_card_;
-	delete [] this->brend_;
-	}
-}
 
 void Komputer::setOper_memory ()
 {
@@ -115,6 +104,7 @@ void Komputer::getOper_memory ()const
 {
 	cout<<"Оперативная память (Гб): "<<this->oper_memory_<<endl;
 }
+
 void Komputer:: Show()const
 {
 	cout<<"Информация о компьютере:\n";
@@ -129,4 +119,12 @@ void Komputer:: Show()const
 			
 }
 
-
+Komputer::~Komputer ()
+{
+	//освобожд. память в куче
+	if(model_video_card_ && brend_)
+	{
+	delete [] model_video_card_;
+	delete [] this->brend_;
+	}
+}
