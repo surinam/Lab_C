@@ -1,54 +1,86 @@
 #include "stdafx.h"
 #include "tovar.h"
 #include <iostream>
+#include "laboratorie.h"
+#include "komputer.h"
+using namespace std;
+typedef unsigned int u_int;
 
-
-Tovar::Tovar (char* brend_,float stoimost_, bool skidka_, unsigned int year_manuf_)
- {
-	length=strlen(brend_)+1;
-	this->brend_=new char[length]; //выделить пам. в куче
-	if (this->brend_) {strcpy_s(this->brend_,length,brend_);}
-	this->stoimost_ =stoimost_;
-	this->skidka_=skidka_;
-	this->year_manuf_=year_manuf_;
-	};
-
-Tovar* Tovar::pHead_=NULL;
-
-//добавление в односвяз. список
-void Tovar::add_to_list(Tovar *p_add_obj) //можно передавать указатель на ПК
+Tovar::Tovar (char* brend_,unsigned int stoimost_, bool skidka_, unsigned int year_manuf_)
+	:Laboratorie(),stoimost_(stoimost_),skidka_(skidka_),year_manuf_(year_manuf_)
 {
-	if(!pHead_) //если список пуст
-	{
-		pHead_=p_add_obj; //инициализ. голову
-		p_add_obj->next=NULL; //занулить указ. на следующ. структ. переменую
+	 setBrend(brend_);
+};
+	
 
-	}
-	else
+void Tovar::setBrend(char*brend_)
+{
+	if(this->brend_!=NULL) 
 	{
-		Tovar*p_buf=pHead_; //рабочий указатель
-		while(p_buf->next!=NULL) //если далее имеется элемент (структ. переменная)
-		{
-			p_buf=p_buf->next;
-		};
-		p_buf->next=p_add_obj;
-		p_add_obj->next=NULL; //у вновь добавл. обнул. на следующий
+		delete [] this->brend_;
 	}
+	length=strlen(brend_)+1;
+	this->brend_=new char[length];//выделить пам. в куче
+	if(this->brend_)
+	{
+		strcpy_s(this->brend_,length,brend_);
+	}
+
 }
 
-//статическая функц.-член просмотра списка
-void Tovar::Show_list()
+char* Tovar::getBrend () const
 {
-	Tovar*p_buf=pHead_; //рабочий указатель
-	while(p_buf) //пока не конец
-	{
-		p_buf->Show(); //вызвать функцию Show() сответ. фактическому значению указ.(объект. типа) p_buf, а не его типу
-		p_buf=p_buf->next;
-	}
+	return this->brend_;
+}
+
+void Tovar::setStoimost (u_int stoimost_)
+{
+	this->stoimost_=stoimost_;
+}
+
+u_int Tovar::getStoimost () const
+{
+	return	this->stoimost_;
+}
+
+void Tovar::setSkidka (bool skidka_ )
+{
+	this->skidka_=skidka_;
+}
+
+bool Tovar::getSkidka () const
+{
+	return this->skidka_;
+}
+
+void Tovar::setYearManuf(u_int year_manuf_)
+{
+	
+	this->year_manuf_=year_manuf_;
+}
+
+u_int Tovar::getYearManuf() const
+{
+	
+	return this->year_manuf_;
+}
+
+
+//статическая функц.-член 
+void Tovar::Show(Tovar*p)
+{
+	cout<<"Бренд "<<p->type_tech()<<":"<<p->getBrend()<<endl;
+	p->Show_fields_elem();//вызвать функцию Show() сответ. фактическому значению указ.(объект. типа) p_buf, а не его типу
+	/*this->getStoimost();
+	this->getSkidka();
+	this->getYearManuf();*/
 };
 
 
 Tovar::~Tovar ()
 {
-	
+	if(brend_)
+	{
+		delete [] brend_;
+	}
 }

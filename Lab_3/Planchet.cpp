@@ -3,29 +3,46 @@
 #include <iostream>
 
 using namespace  std;
-
-Planchet::Planchet ()
+//используем список инициализации
+Planchet::Planchet (char*brend_,unsigned int stoimost_ ,bool skidka_,unsigned int year_manuf_,
+					unsigned int front_camera_,unsigned int rear_camera_,char*pereferiy_,float weight_)
+	:Tovar(brend_,stoimost_,skidka_,year_manuf_), Texnika(pereferiy_,weight_),
+	 front_camera_(front_camera_),rear_camera_(rear_camera_)
 {
-	cout<<"Вызван конструктор планшета"<<endl;
 }
 
-void Planchet::setFront_camera (float front_camera)
+void Planchet::setFront_camera (unsigned int front_camera_)
 {
-	this->front_camera=front_camera;
+	this->front_camera_=front_camera_;
 }
 
-void Planchet::getFront_camera ()
+unsigned int Planchet::getFront_camera () const
 {
-	cout<<"Фронтальная камера (Мп): "<<this->front_camera<<endl;
+	return this->front_camera_;
 }
-void Planchet::setRear_camera (float rear_camera)
+void Planchet::setRear_camera (unsigned int rear_camera_)
 {
-	this->rear_camera=rear_camera;
+	this->rear_camera_=rear_camera_;
 }
 
-void Planchet::getRear_camera ()
+unsigned int Planchet::getRear_camera () const
 {
-	cout<<"Тыловая камера (Мп): "<<this->rear_camera<<endl;
+	return this->rear_camera_;
+}
+
+char* Planchet::type_tech() const
+{
+	return "планшета";
+}
+
+void Planchet::Show_fields_elem() const
+{
+	cout<<"Фронтальная камера "<<type_tech()<<"(Мп):";
+	cout<<this->getFront_camera();
+	cout<<endl;
+	cout<<"Тыловая камера "<<type_tech()<<"(Мп):";
+	cout<<this->getRear_camera();
+	cout<<endl;
 }
 
 Planchet::~Planchet ()

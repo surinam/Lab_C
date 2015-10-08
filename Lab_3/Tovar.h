@@ -1,32 +1,34 @@
 #pragma once
 #include <iostream>
+#include "laboratorie.h"
+
 //абстрактный класс
-class Tovar
+class Tovar: public Laboratorie
 {
 protected:
-	static Tovar* pHead_; //не содержится ни в одном объекте класса (общая для всех), созд. только один раз (в отлич. от локал.)
 	unsigned int length;
-	Tovar *next; //указ. объявл. можно, а объекты типа Tovar в самом кл. Tovar-нельзя
 	char* brend_;
-	float stoimost_;
+	unsigned int stoimost_;
 	bool skidka_;
 	unsigned int year_manuf_;
 
 public:
-	Tovar (char* brend_="no brend",float stoimost_=NULL, bool skidka_=false, unsigned int year_manuf_= NULL);
- 	//пустые (чистые) виртуальные функции-члены кл.
-	virtual void setBrend ()=0;
-	virtual void getBrend () const=0;
-	virtual void setStoimost ()=0;
-	virtual void getStoimost () const=0;
-	virtual void setSkidka ()=0;
-	virtual void getSkidka () const=0;
-	virtual void setYearManuf ()=0;
-	virtual void getYearManuf () const=0;
-	virtual void Show() const=0; //показать все поля
-    static void add_to_list(Tovar *p_add_obj);
-    static void Show_list ();
-	virtual ~Tovar ();
+	Tovar (char* brend_="no brend",unsigned int stoimost_=NULL, bool skidka_=false, unsigned int year_manuf_= NULL);
+ 	void setBrend (char*p_str);
+	char* getBrend () const;
+	void setStoimost (unsigned int stoimost_ );
+	unsigned int getStoimost () const;
+    void setSkidka (bool skidka_);
+	bool getSkidka () const;
+	void setYearManuf (unsigned int year_manuf_);
+    unsigned int getYearManuf () const;
+
+	//пустая виртуальная функция-член класса
+	virtual char*type_tech() const=0;
+	virtual void Show_fields_elem() const=0; //показать поля, уточненные в ПК
+
+    void Show(Tovar*); // показать поля АПК
+	~Tovar ();
 	
 };
 

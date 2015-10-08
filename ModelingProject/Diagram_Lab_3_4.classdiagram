@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="1512e73b-d752-43c1-bc28-d6678cf7a656" name="Diagram_Lab_3_4" linkedPackageId="a0fc721c-fc0e-42ec-8469-7ff81512a759" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="cd77de0a-8ed3-4254-86cb-7afbf2a4dd52" name="Товар" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7ab15393-6d26-478d-be89-785921ad2665" />
+        <ownedAttributesInternal>
+          <property Id="6967e77b-08f5-44b3-a9d9-a48f76a9e949" name="brend_" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d7b38afa-f154-480a-a3bb-cc0c37c6144f" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5322d735-aeea-4468-92c9-2db5e07d7b09" LastKnownName="char*" />
+            </type_NamedElement>
+          </property>
+          <property Id="020230df-38cf-4185-8b66-b4a4fbbc216d" name="stoimost_" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6291b531-22ac-4039-825d-45c40e03a6cf" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="a936be36-798e-49d0-a944-c639447f6081" LastKnownName="unsigned int" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="0dc7b532-5340-4f2a-ae84-7a8d9d6a85e3" name="Operation1" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="04a7879a-2a0e-496f-aad2-858964059b30" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3bb5a0da-e42e-43ac-b4ca-1a984d8d830a" name="Техника" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1e38c01e-4e88-44bb-bfa0-49d92b405f93" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="fd5e49c7-d9fd-4006-91df-a1a64100deac" name="Лаборатория" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="44d83a0b-6c3b-4e41-8f8c-a127634e8344" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d04206ad-915b-407f-98f4-ad788920307f" name="ПК" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ffc4745d-e1e3-4eb1-ac8a-3169b4868a36" />
+        <generalsInternal>
+          <generalization Id="18bc514e-97e7-4e6c-94b3-ea426f4cb9f4" isSubstitutable="false">
+            <classMoniker Id="3bb5a0da-e42e-43ac-b4ca-1a984d8d830a" LastKnownName="Техника" />
+            <elementDefinition Id="90a95c29-99ef-49a6-888b-8d5464a89d2f" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d9626082-5abc-4bc1-8d13-559a66599284" name="Планшет" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3d2401a0-f529-4606-b4e8-b5e8109dd589" />
+        <generalsInternal>
+          <generalization Id="9c3741b7-1589-41d7-b4a2-4809bb2238e8" isSubstitutable="false">
+            <classMoniker Id="3bb5a0da-e42e-43ac-b4ca-1a984d8d830a" LastKnownName="Техника" />
+            <elementDefinition Id="bff6445f-d2a6-48f8-a5fc-3718f229109a" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="707c2ffb-7759-4aeb-bc04-3e88101633cd" name="Холодильник" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="80f3bf08-42df-4d74-8259-8995bc9f0e35" />
+        <generalsInternal>
+          <generalization Id="90aa09c1-7f2e-43a4-b72b-b946eeea000e" isSubstitutable="false">
+            <classMoniker Id="3bb5a0da-e42e-43ac-b4ca-1a984d8d830a" LastKnownName="Техника" />
+            <elementDefinition Id="80f92666-2672-4884-aae9-32d451d5b5a9" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1b29d32c-2bce-48da-afe5-5018316352fd" name="Мультиварка" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6bbc5a09-609a-4b8d-9cf9-ac2e40b436e9" />
+        <generalsInternal>
+          <generalization Id="2a7ac1d3-6520-4172-ab0d-101510573b32" isSubstitutable="false">
+            <classMoniker Id="3bb5a0da-e42e-43ac-b4ca-1a984d8d830a" LastKnownName="Техника" />
+            <elementDefinition Id="aa39a507-7706-444e-8f38-8e153a28b786" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1e20d77b-810f-44ef-9810-c65bed352ca9" name="Контроллер" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b9e9d341-4b0a-429a-8c86-f100d2afac14" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="5322d735-aeea-4468-92c9-2db5e07d7b09" name="char*" isAbstract="false" isLeaf="false" cachedFullName="char*">
+        <elementDefinition Id="bca84aae-d028-484f-ae69-669d39ed8a5c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a936be36-798e-49d0-a944-c639447f6081" name="unsigned int" isAbstract="false" isLeaf="false" cachedFullName="unsigned int">
+        <elementDefinition Id="1f87002b-0103-40cf-88a1-021b3a464ef5" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="a0fc721c-fc0e-42ec-8469-7ff81512a759" name="ModelingProject">
+    <elementDefinition Id="243ed8b1-c248-48cf-b4e0-9f17b5d9342f" />
+    <profileInstances>
+      <packageHasProfileInstances Id="72fbb4ef-3e09-4465-9517-41ad708f58d4">
+        <profileInstance Id="0c007c4e-97ce-488d-b3e1-e8907e1aa285" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="1eb39003-0596-4571-902e-c4664ea15fb1">
+        <profileInstance Id="479b0668-e269-476b-8337-db09fb42e82b" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

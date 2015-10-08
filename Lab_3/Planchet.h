@@ -10,14 +10,21 @@ class Planchet:
 
 
 private:
-	float front_camera;
-	float rear_camera;
+	unsigned int front_camera_;
+	unsigned int rear_camera_;
 	
 public:
-	Planchet ();
-	void setFront_camera (float front_camera);
-	void getFront_camera ();
-	void setRear_camera (float rear_camera);
-	void getRear_camera ();
+	//в конструкторе исп. значениия по умолчанию
+	Planchet (char* brend_="no brend", unsigned int stoimost_=NULL, 
+		      bool skidka_=false, unsigned int year_manuf_=NULL, 
+			  unsigned int front_camera_=NULL,unsigned int rear_camera_=NULL,
+			  char*pereferiy_="not",float weight_=NULL);
+
+	char* type_tech() const;
+	void setFront_camera (unsigned int front_camera_);
+	unsigned int getFront_camera () const;
+	void setRear_camera (unsigned int rear_camera_);
+	unsigned int getRear_camera () const;
+	void Show_fields_elem() const; //переопред. функцию иначе класс Planchet -АПК
 	~Planchet ();
 };
